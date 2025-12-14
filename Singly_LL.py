@@ -10,6 +10,11 @@ class LinkedList:
     
     def length(self):
         return self.__len
+    
+    def insert_begining(self,value):
+        new_node = Node(value)
+        new_node.next = self.head
+        self.head = new_node
         
     def insert_end(self, value) -> None:
         new_node = Node(value)
@@ -37,7 +42,6 @@ class LinkedList:
             temp = temp.next
         print("None")
 
-    
     def pop(self):
         if not self.head:
             print("Linked List is empty")
@@ -76,18 +80,19 @@ class LinkedList:
             temp = temp.next
             
         return False
-                
-            
+                  
            
-        
+#Testing code:        
 if __name__ == "__main__":
     LL = LinkedList()
-    LL.insert_end(5)
-    LL.insert_end(10)
-    LL.insert_end(15)
-    LL.insert_end(20)
-    LL.insert_end(25)
-    LL.insert_end(30)
-    LL.insert_end(30)
+    # LL.insert_end(5)
+    # LL.insert_end(10)
+    # LL.insert_end(15)
+    # LL.insert_end(20)
+    # LL.insert_end(25)
+    # LL.insert_end(30)
+    # LL.insert_end(30)
+    LL.insert_begining(4)
+    LL.insert_begining(7)
     LL.display()
 
