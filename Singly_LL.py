@@ -56,8 +56,29 @@ class LinkedList:
             temp = temp.next
         prev.next = None
         self.__len -= 1
+    
+    def delete_by_value(self, value) -> None:
+        if self.head is None:
+            raise Exception("Linked List is empty")
         
+        if value == self.head.value:
+            self.head = self.head.next
+            return
         
+        temp = self.head
+        
+        while temp.next:
+                            
+            if temp.next.value == value:                              
+                temp.next = temp.next.next
+                return
+                                        
+            temp = temp.next
+            
+        return False
+                
+            
+           
         
 if __name__ == "__main__":
     LL = LinkedList()
@@ -67,16 +88,6 @@ if __name__ == "__main__":
     LL.insert_end(20)
     LL.insert_end(25)
     LL.insert_end(30)
-    
+    LL.insert_end(30)
     LL.display()
-    
-    LL.pop()
-    LL.pop()
-    LL.pop()
-    LL.pop()
-    LL.pop()
-    LL.pop()
-    LL.pop()
-   
-    LL.display()
-    print(LL.length())
+
